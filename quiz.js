@@ -81,7 +81,7 @@ const quizData = {
       { q: "Vad är Sveriges huvudstad?", opts: ["Göteborg","Malmö","Stockholm","Uppsala"], ans: 2 },
       { q: "Hur många landskap finns det i Sverige?", opts: ["21","25","28","17"], ans: 1 },
       { q: "När är Sveriges nationaldag?", opts: ["1 maj","6 juni","15 juli","24 december"], ans: 1 },
-      { q: "Vilket är Sveriges näst största stad?", opts: ["Malmö","Uppsala","Göteborg","Västerås"], ans: 2 },
+      { q: "Vad är Sveriges näst största stad?", opts: ["Malmö","Uppsala","Göteborg","Västerås"], ans: 2 },
       { q: "Vad heter Sveriges nuvarande kung?", opts: ["Carl XVI Gustaf","Gustav VI Adolf","Carl XIV Johan","Oscar II"], ans: 0 },
       { q: "Vilket år gick Sverige med i EU?", opts: ["1991","1993","1995","1997"], ans: 2 },
       { q: "Vilket län ligger Höör i?", opts: ["Blekinge","Halland","Skåne","Småland"], ans: 2 },
