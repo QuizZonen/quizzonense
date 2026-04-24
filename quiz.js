@@ -20,11 +20,11 @@ const quizData = {
     questions: [
       { q: "Vilket land har vunnit flest VM-guld i fotboll?", opts: ["Argentina","Frankrike","Brasilien","Tyskland"], ans: 2 },
       { q: "I vilken stad spelas Wimbledon?", opts: ["Manchester","Edinburgh","Birmingham","London"], ans: 3 },
-      { q: "Vad heter den kända cykelracet runt Frankrike?", opts: ["Giro d'Italia","Tour de France","La Vuelta","Paris-Roubaix"], ans: 1 },
-      { q: "Hur många spelare finns på ett basketlag på planen?", opts: ["4","5","6","7"], ans: 1 },
+      { q: "Vad heter det kända cykelracet runt Frankrike?", opts: ["Giro d'Italia","Tour de France","La Vuelta","Paris-Roubaix"], ans: 1 },
+      { q: "Hur många spelare finns det i ett basketlag på planen?", opts: ["4","5","6","7"], ans: 1 },
       { q: "Vilket land uppfann sporten golf?", opts: ["England","Sverige","USA","Skottland"], ans: 3 },
       { q: "Vilken sport spelas i NHL?", opts: ["Basket","Ishockey","Fotboll","Rugby"], ans: 1 },
-      { q: "Hur lång är ett olympiskt simningsbassäng?", opts: ["25 meter","40 meter","50 meter","100 meter"], ans: 2 },
+      { q: "Hur lång är en olympiskt simningsbassäng?", opts: ["25 meter","40 meter","50 meter","100 meter"], ans: 2 },
       { q: "Vem kallas 'The Greatest' inom boxning?", opts: ["Mike Tyson","Sugar Ray Leonard","Muhammad Ali","Joe Frazier"], ans: 2 },
       { q: "Vilket år fick Sverige 3:a plats i fotbolls-VM?", opts: ["1950","1958","1978","1994"], ans: 1 },
       { q: "Hur många sets vinner man Wimbledon-final (herrar)?", opts: ["2","3","4","5"], ans: 1 }
@@ -50,20 +50,20 @@ const quizData = {
     questions: [
       { q: "Vilket band spelade 'Bohemian Rhapsody'?", opts: ["The Beatles","Rolling Stones","Queen","Led Zeppelin"], ans: 2 },
       { q: "Vilket land kommer ABBA från?", opts: ["Norge","Danmark","Sverige","Finland"], ans: 2 },
-      { q: "Vad heter trollkarlen i Harry Potter?", opts: ["Albus Dumbledore","Sirius Black","Rubeus Hagrid","Severus Snape"], ans: 0 },
+      { q: "Vad heter rektorn i Harry Potter?", opts: ["Albus Dumbledore","Sirius Black","Rubeus Hagrid","Severus Snape"], ans: 0 },
       { q: "I vilken stad utspelar sig Stranger Things?", opts: ["Hawkins","Springfield","Sunnydale","Stars Hollow"], ans: 0 },
-      { q: "Vad heter Disneys lejonkung?", opts: ["Nala","Simba","Mufasa","Scar"], ans: 1 },
-      { q: "Vilket år kom första iPhone?", opts: ["2005","2006","2007","2008"], ans: 2 },
+      { q: "Vad heter huvudkaraktären i lejonkungen?", opts: ["Nala","Simba","Mufasa","Scar"], ans: 1 },
+      { q: "Vilket år kom den första iPhonen?", opts: ["2005","2006","2007","2008"], ans: 2 },
       { q: "Vem spelar James Bond i de senaste filmerna?", opts: ["Pierce Brosnan","Daniel Craig","Tom Hardy","Idris Elba"], ans: 1 },
       { q: "Vilken artist sjöng 'Shape of You'?", opts: ["Justin Bieber","Charlie Puth","Ed Sheeran","Sam Smith"], ans: 2 },
-      { q: "Vad heter Ikeas hemstad i Sverige?", opts: ["Älmhult","Växjö","Kalmar","Kristianstad"], ans: 0 },
+      { q: "I vilken småländsk ort grundades Ikea?", opts: ["Älmhult","Växjö","Kalmar","Kristianstad"], ans: 0 },
       { q: "Vilket land vann Eurovision 2024?", opts: ["Sverige","Israel","Schweiz","Italien"], ans: 2 }
     ]
   },
   vetenskap: {
     name: "Vetenskap", emoji: "🔬",
     questions: [
-      { q: "Vad är kemisk beteckning för vatten?", opts: ["HO","H2O","CO2","O2H"], ans: 1 },
+      { q: "Vad är den kemisk beteckning för vatten?", opts: ["HO","H2O","CO2","O2H"], ans: 1 },
       { q: "Hur många planeter finns det i vårt solsystem?", opts: ["7","8","9","10"], ans: 1 },
       { q: "Vad kallas kraften som håller oss kvar på jorden?", opts: ["Friktion","Magnetism","Gravitation","Centrifugalkraft"], ans: 2 },
       { q: "Vad är ljusets hastighet (ungefär)?", opts: ["100 000 km/s","200 000 km/s","300 000 km/s","400 000 km/s"], ans: 2 },
@@ -80,11 +80,11 @@ const quizData = {
     questions: [
       { q: "Vad är Sveriges huvudstad?", opts: ["Göteborg","Malmö","Stockholm","Uppsala"], ans: 2 },
       { q: "Hur många landskap finns det i Sverige?", opts: ["21","25","28","17"], ans: 1 },
-      { q: "Vad heter Sveriges nationaldag?", opts: ["1 maj","6 juni","15 juli","24 december"], ans: 1 },
+      { q: "När är Sveriges nationaldag?", opts: ["1 maj","6 juni","15 juli","24 december"], ans: 1 },
       { q: "Vilket är Sveriges näst största stad?", opts: ["Malmö","Uppsala","Göteborg","Västerås"], ans: 2 },
       { q: "Vad heter Sveriges nuvarande kung?", opts: ["Carl XVI Gustaf","Gustav VI Adolf","Carl XIV Johan","Oscar II"], ans: 0 },
       { q: "Vilket år gick Sverige med i EU?", opts: ["1991","1993","1995","1997"], ans: 2 },
-      { q: "Vilket county/län ligger Kristianstad i?", opts: ["Blekinge","Halland","Skåne","Småland"], ans: 2 },
+      { q: "Vilket län ligger Höör i?", opts: ["Blekinge","Halland","Skåne","Småland"], ans: 2 },
       { q: "Vad kallas det svenska parlamentet?", opts: ["Stortinget","Riksdagen","Folketing","Landsting"], ans: 1 },
       { q: "Vilken stad i Sverige är känd för glasriket?", opts: ["Borås","Växjö","Kalmar","Orrefors"], ans: 3 },
       { q: "Vilket år antog Sverige sin nuvarande grundlag?", opts: ["1809","1974","1980","1995"], ans: 1 }
@@ -97,7 +97,7 @@ const quizData = {
       { q: "Vad är huvudingrediensen i guacamole?", opts: ["Tomat","Avokado","Lök","Paprika"], ans: 1 },
       { q: "Vilket land är känt för att ha uppfunnit sushi?", opts: ["Kina","Korea","Japan","Thailand"], ans: 2 },
       { q: "Vad kallas den franska rätten med sniglar?", opts: ["Escargot","Foie gras","Ratatouille","Bouillabaisse"], ans: 0 },
-      { q: "Hur länge bör man koka ett ägg för hårdkokt?", opts: ["3 minuter","5 minuter","8 minuter","12 minuter"], ans: 2 },
+      { q: "Hur länge bör man koka ett ägg så det blir hårdkokt?", opts: ["3 minuter","5 minuter","8 minuter","12 minuter"], ans: 2 },
       { q: "Vad är den viktigaste ingrediensen i hummus?", opts: ["Linser","Kikärtor","Vita bönor","Edamame"], ans: 1 },
       { q: "Vilket land producerar mest kaffe i världen?", opts: ["Colombia","Vietnam","Etiopien","Brasilien"], ans: 3 },
       { q: "Vilken krydda ger curryn dess gula färg?", opts: ["Paprika","Saffran","Gurkmeja","Senapspulver"], ans: 2 },
@@ -115,7 +115,7 @@ const quizData = {
       { q: "Vilket land producerar flest filmer per år?", opts: ["USA","Kina","Indien","Japan"], ans: 2 },
       { q: "Vad heter den blå robot-katten i den japanska serien?", opts: ["Totoro","Pikachu","Doraemon","Astro Boy"], ans: 2 },
       { q: "Vilken film vann Oscar för bästa film 2020?", opts: ["1917","Joker","Parasite","Once Upon a Time in Hollywood"], ans: 2 },
-      { q: "Hur heter huvudpersonen i The Office (USA)?", opts: ["Jim Halpert","Dwight Schrute","Michael Scott","Andy Bernard"], ans: 2 },
+      { q: "Vad heter huvudpersonen i The Office (USA)?", opts: ["Jim Halpert","Dwight Schrute","Michael Scott","Andy Bernard"], ans: 2 },
       { q: "Vad heter regissören bakom Star Wars originaltrilogin?", opts: ["Steven Spielberg","George Lucas","James Cameron","Ridley Scott"], ans: 1 },
       { q: "Vem sjöng 'Let It Go' i Frost?", opts: ["Beyoncé","Adele","Idina Menzel","Celine Dion"], ans: 2 }
     ]
