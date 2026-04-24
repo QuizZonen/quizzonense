@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QuizZonen – Testa din kunskap!</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ADSENSE TOPP -->
+  <div class="ad-slot ad-top">
+    <!-- Google AdSense: klistra in din annons-kod här -->
+    <span>Annons</span>
+  </div>
+
+  <header>
+    <div class="header-inner">
+      <div class="logo">Quiz<span>Zonen</span></div>
+      <nav>
+        <a href="#" class="nav-link active">Hem</a>
+        <a href="#" class="nav-link">Topplista</a>
+        <a href="#" class="nav-link">Om oss</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HEM -->
+  <main id="view-home" class="view active">
+    <section class="hero">
+      <p class="hero-label">100% gratis</p>
+      <h1>Hur smart<br>är du egentligen?</h1>
+      <p class="hero-sub">Välj en kategori, svara snabbt och bygg din streak för bonuspoäng. Klättra på topplistan!</p>
+    </section>
+
+    <section class="score-info-bar">
+      <div class="score-info-item">⚡ Snabbhet ger bonuspoäng</div>
+      <div class="score-info-item">🔥 Streak ger extra poäng</div>
+      <div class="score-info-item">🏆 100 poäng per rätt svar</div>
+    </section>
+
+    <section class="categories">
+      <div class="cat-card" onclick="startQuiz('geo')"><div class="cat-emoji">🌍</div><h3>Geografi</h3><p>10 frågor</p></div>
+      <div class="cat-card" onclick="startQuiz('sport')"><div class="cat-emoji">⚽</div><h3>Sport</h3><p>10 frågor</p></div>
+      <div class="cat-card" onclick="startQuiz('historia')"><div class="cat-emoji">🏛️</div><h3>Historia</h3><p>10 frågor</p></div>
+      <div class="cat-card" onclick="startQuiz('pop')"><div class="cat-emoji">🎵</div><h3>Popkultur</h3><p>10 frågor</p></div>
+      <div class="cat-card" onclick="startQuiz('vetenskap')"><div class="cat-emoji">🔬</div><h3>Vetenskap</h3><p>10 frågor</p></div>
+      <div class="cat-card" onclick="startQuiz('sverige')"><div class="cat-emoji">🇸🇪</div><h3>Sverige</h3><p>10 frågor</p></div>
+      <div class="cat-card" onclick="startQuiz('mat')"><div class="cat-emoji">🍕</div><h3>Mat & dryck</h3><p>10 frågor</p></div>
+      <div class="cat-card" onclick="startQuiz('film')"><div class="cat-emoji">🎬</div><h3>Film & TV</h3><p>10 frågor</p></div>
+    </section>
+
+    <div class="ad-slot ad-mid"><span>Annons</span></div>
+  </main>
+
+  <!-- QUIZ -->
+  <main id="view-quiz" class="view">
+    <div class="quiz-container">
+      <div class="quiz-header">
+        <button class="back-btn" onclick="showView('home')">← Tillbaka</button>
+        <span id="quiz-category-label"></span>
+        <span id="quiz-score-label">0 poäng</span>
+      </div>
+      <div class="progress-wrap">
+        <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+        <span id="progress-label">1 / 10</span>
+      </div>
+      <!-- Tidslinje -->
+      <div class="timer-bar"><div class="timer-fill" id="timer-fill"></div></div>
+
+      <div class="streak-row">
+        <span id="streak-label"></span>
+      </div>
+
+      <div class="question-card">
+        <div class="points-popup" id="points-popup"></div>
+        <p id="question-text"></p>
+        <div class="options" id="options-container"></div>
+      </div>
+    </div>
+  </main>
+
+  <!-- RESULTAT -->
+  <main id="view-resultat" class="view">
+    <div class="result-container">
+      <div class="result-emoji" id="result-emoji"></div>
+      <h2 id="result-title"></h2>
+      <div class="result-score-big" id="result-score-big"></div>
+      <p id="result-msg"></p>
+
+      <div class="result-stats">
+        <div class="stat-pill" id="result-points"></div>
+        <div class="stat-pill" id="result-streak"></div>
+      </div>
+
+      <div class="name-input-wrap">
+        <label>Spara på topplistan:</label>
+        <div class="name-row">
+          <input type="text" id="player-name" placeholder="Ditt namn..." maxlength="20" />
+          <button onclick="saveScore()">Spara</button>
+        </div>
+        <p class="saved-msg" id="saved-msg"></p>
+      </div>
+
+      <div class="result-btns">
+        <button class="btn-primary" onclick="replayQuiz()">Spela igen</button>
+        <button class="btn-secondary" onclick="showView('home')">Byt kategori</button>
+        <button class="btn-share" onclick="shareResult()">Dela resultat</button>
+      </div>
+
+      <!-- DONATION -->
+      <div class="donate-box">
+        <p>☕ Gillar du QuizZonen? Stöd sajten!</p>
+        <a class="btn-donate" href="https://ko-fi.com/quizzonen" target="_blank">Donera via Ko-fi</a>
+        <span class="donate-note">Ersätt länken med din egna Ko-fi-adress</span>
+      </div>
+    </div>
+  </main>
+
+  <!-- TOPPLISTA -->
+  <main id="view-topplista" class="view">
+    <div class="top-container">
+      <h2>Topplista</h2>
+      <p class="top-sub">Rankad på poäng. Snabba svar och långa streaks ger bonuspoäng!</p>
+
+      <div class="time-badge">
+        ⏱️ Din totala tid på sajten: <strong id="session-time">0s</strong>
+      </div>
+
+      <div id="topplista-content"></div>
+      <button class="btn-secondary" style="margin-top:1.5rem" onclick="clearScores()">Rensa topplista</button>
+    </div>
+  </main>
+
+  <!-- OM OSS -->
+  <main id="view-om" class="view">
+    <div class="om-container">
+      <h2>Om QuizZonen</h2>
+      <p>QuizZonen är en gratis quiz-sajt för alla som vill testa sin kunskap och ha kul. Svara snabbt och bygg streaks för att maximera dina poäng!</p>
+      <p>Sajten finansieras av annonser och frivilliga donationer – helt gratis för dig att spela!</p>
+
+      <div class="score-explainer">
+        <h3>Hur räknas poängen?</h3>
+        <ul>
+          <li>✅ Rätt svar = <strong>100 poäng</strong></li>
+          <li>⚡ Svarar du inom 3 sekunder = upp till <strong>+50 bonuspoäng</strong></li>
+          <li>🔥 2 rätt i rad = <strong>+25 bonuspoäng</strong>, 3 i rad = <strong>+50</strong>, osv.</li>
+        </ul>
+      </div>
+
+      <div class="donate-box">
+        <p>☕ Gillar du QuizZonen? Stöd sajten med en kopp kaffe!</p>
+        <a class="btn-donate" href="https://ko-fi.com/quizzonen" target="_blank">Donera via Ko-fi</a>
+        <span class="donate-note">Ersätt länken med din egna Ko-fi-adress</span>
+      </div>
+
+      <button class="btn-secondary" onclick="showView('home')" style="margin-top:1rem">Starta ett quiz</button>
+    </div>
+  </main>
+
+  <div class="ad-slot ad-bottom"><span>Annons</span></div>
+
+  <footer>
+    <p>© 2025 QuizZonen &nbsp;|&nbsp; Gratis quiz på svenska</p>
+  </footer>
+
+  <script src="quiz.js"></script>
+</body>
+</html>
