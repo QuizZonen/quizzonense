@@ -6,20 +6,14 @@
   <title>QuizZonen – Testa din kunskap!</title>
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
-  
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-NQH3GQYCQS"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-NQH3GQYCQS');
-</script>
-  
 </head>
 <body>
 
+  <!-- ADSENSE TOPP -->
+  <div class="ad-slot ad-top">
+    <!-- Google AdSense: klistra in din annons-kod här -->
+    <span>Annons</span>
+  </div>
 
   <header>
     <div class="header-inner">
@@ -28,6 +22,7 @@
         <a href="#" class="nav-link active">Hem</a>
         <a href="#" class="nav-link">Topplista</a>
         <a href="#" class="nav-link">Om oss</a>
+        <a href="#" class="nav-link">Kontakt</a>
       </nav>
     </div>
   </header>
@@ -46,25 +41,18 @@
       <div class="score-info-item">🏆 100 poäng per rätt svar</div>
     </section>
 
-<section class="categories">
-  <div class="cat-card" onclick="startQuiz('geo')"><div class="cat-emoji">🌍</div><h3>Geografi</h3><p>10 frågor</p></div>
-  <div class="cat-card" onclick="startQuiz('sport')"><div class="cat-emoji">⚽</div><h3>Sport</h3><p>10 frågor</p></div>
-  <div class="cat-card" onclick="startQuiz('historia')"><div class="cat-emoji">🏛️</div><h3>Historia</h3><p>10 frågor</p></div>
-  <div class="cat-card" onclick="startQuiz('pop')"><div class="cat-emoji">🎵</div><h3>Popkultur</h3><p>10 frågor</p></div>
-  <div class="cat-card" onclick="startQuiz('vetenskap')"><div class="cat-emoji">🔬</div><h3>Vetenskap</h3><p>10 frågor</p></div>
-  <div class="cat-card" onclick="startQuiz('sverige')"><div class="cat-emoji">🇸🇪</div><h3>Sverige</h3><p>10 frågor</p></div>
-  <div class="cat-card" onclick="startQuiz('mat')"><div class="cat-emoji">🍕</div><h3>Mat & dryck</h3><p>10 frågor</p></div>
-  <div class="cat-card" onclick="startQuiz('film')"><div class="cat-emoji">🎬</div><h3>Film & TV</h3><p>10 frågor</p></div>
-  <div class="cat-card" onclick="startQuiz('gaming')"><div class="cat-emoji">🎮</div><h3>Gaming</h3><p>10 frågor</p></div>
-  <div class="cat-card" onclick="startQuiz('svfilmtv')"><div class="cat-emoji">📺</div><h3>Svensk film & TV</h3><p>10 frågor</p></div>
-  <div class="cat-card" onclick="startQuiz('matte')"><div class="cat-emoji">🔢</div><h3>Matematik</h3><p>10 frågor</p></div>
-  <div class="cat-card" onclick="startQuiz('huvudstader')"><div class="cat-emoji">✈️</div><h3>Huvudstäder</h3><p>10 frågor</p></div>
-  <div class="cat-card" onclick="startQuiz('litteratur')"><div class="cat-emoji">📖</div><h3>Litteratur</h3><p>10 frågor</p></div>
-  <div class="cat-card" onclick="startQuiz('natur')"><div class="cat-emoji">🌿</div><h3>Natur & djur</h3><p>10 frågor</p></div>
-  <div class="cat-card" onclick="startQuiz('kungliga')"><div class="cat-emoji">👑</div><h3>Kungliga familjen</h3><p>10 frågor</p></div>
-  <div class="cat-card" onclick="startQuiz('trick')"><div class="cat-emoji">😂</div><h3>Trick-frågor</h3><p>10 frågor</p></div>
-</section>
-    
+    <section class="categories">
+      <div class="cat-card" onclick="startQuiz('geo')"><div class="cat-emoji">🌍</div><h3>Geografi</h3><p>10 frågor</p></div>
+      <div class="cat-card" onclick="startQuiz('sport')"><div class="cat-emoji">⚽</div><h3>Sport</h3><p>10 frågor</p></div>
+      <div class="cat-card" onclick="startQuiz('historia')"><div class="cat-emoji">🏛️</div><h3>Historia</h3><p>10 frågor</p></div>
+      <div class="cat-card" onclick="startQuiz('pop')"><div class="cat-emoji">🎵</div><h3>Popkultur</h3><p>10 frågor</p></div>
+      <div class="cat-card" onclick="startQuiz('vetenskap')"><div class="cat-emoji">🔬</div><h3>Vetenskap</h3><p>10 frågor</p></div>
+      <div class="cat-card" onclick="startQuiz('sverige')"><div class="cat-emoji">🇸🇪</div><h3>Sverige</h3><p>10 frågor</p></div>
+      <div class="cat-card" onclick="startQuiz('mat')"><div class="cat-emoji">🍕</div><h3>Mat & dryck</h3><p>10 frågor</p></div>
+      <div class="cat-card" onclick="startQuiz('film')"><div class="cat-emoji">🎬</div><h3>Film & TV</h3><p>10 frågor</p></div>
+    </section>
+
+    <div class="ad-slot ad-mid"><span>Annons</span></div>
   </main>
 
   <!-- QUIZ -->
@@ -125,7 +113,7 @@
       <!-- DONATION -->
       <div class="donate-box">
         <p>☕ Gillar du QuizZonen? Stöd sajten!</p>
-        <a class="btn-donate" href="https://ko-fi.com/quizzonen" target="_blank">Donera via Ko-fi</a>
+        <a class="btn-donate" href="https://ko-fi.com/DITTNAMN" target="_blank">Donera via Ko-fi</a>
         <span class="donate-note">Ersätt länken med din egna Ko-fi-adress</span>
       </div>
     </div>
@@ -151,7 +139,7 @@
     <div class="om-container">
       <h2>Om QuizZonen</h2>
       <p>QuizZonen är en gratis quiz-sajt för alla som vill testa sin kunskap och ha kul. Svara snabbt och bygg streaks för att maximera dina poäng!</p>
-      <p>Sajten finansieras av privatperson och frivilliga donationer – helt gratis för dig att spela!</p>
+      <p>Sajten finansieras av annonser och frivilliga donationer – helt gratis för dig att spela!</p>
 
       <div class="score-explainer">
         <h3>Hur räknas poängen?</h3>
@@ -164,7 +152,7 @@
 
       <div class="donate-box">
         <p>☕ Gillar du QuizZonen? Stöd sajten med en kopp kaffe!</p>
-        <a class="btn-donate" href="https://ko-fi.com/quizzonen" target="_blank">Donera via Ko-fi</a>
+        <a class="btn-donate" href="https://ko-fi.com/DITTNAMN" target="_blank">Donera via Ko-fi</a>
         <span class="donate-note">Ersätt länken med din egna Ko-fi-adress</span>
       </div>
 
@@ -172,10 +160,56 @@
     </div>
   </main>
 
-  
+  <!-- KONTAKT -->
+  <main id="view-kontakt" class="view">
+    <div class="kontakt-container">
+      <h2>Kontakta oss</h2>
+      <p class="kontakt-sub">Har du frågor, förslag på nya kategorier eller hittat ett fel? Hör av dig!</p>
+
+      <div class="kontakt-form-wrap">
+        <form id="kontakt-form" action="https://formspree.io/f/DITT_FORMSPREE_ID" method="POST">
+          <div class="form-group">
+            <label for="namn">Namn</label>
+            <input type="text" id="namn" name="namn" placeholder="Ditt namn..." required />
+          </div>
+          <div class="form-group">
+            <label for="epost">E-post</label>
+            <input type="email" id="epost" name="email" placeholder="din@epost.se" required />
+          </div>
+          <div class="form-group">
+            <label for="amne">Ämne</label>
+            <select id="amne" name="amne">
+              <option value="Förslag på frågor">💡 Förslag på frågor</option>
+              <option value="Fel på sajten">🐛 Fel på sajten</option>
+              <option value="Samarbete">🤝 Samarbete</option>
+              <option value="Övrigt">📬 Övrigt</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="meddelande">Meddelande</label>
+            <textarea id="meddelande" name="meddelande" rows="5" placeholder="Skriv ditt meddelande här..." required></textarea>
+          </div>
+          <button type="submit" class="btn-primary btn-full">Skicka meddelande ✉️</button>
+        </form>
+        <div class="form-success" id="form-success">
+          <div class="success-emoji">✅</div>
+          <h3>Meddelandet skickat!</h3>
+          <p>Tack för att du hörde av dig. Vi svarar så snart vi kan!</p>
+          <button class="btn-secondary" onclick="resetForm()">Skicka ett till</button>
+        </div>
+      </div>
+
+      <div class="kontakt-info">
+        <div class="kontakt-info-item">📧 quizzonen@gmail.com</div>
+        <div class="kontakt-info-item">📍 Sverige</div>
+      </div>
+    </div>
+  </main>
+
+  <div class="ad-slot ad-bottom"><span>Annons</span></div>
 
   <footer>
-    <p>© 2026 QuizZonen &nbsp;|&nbsp; Gratis quiz på svenska</p>
+    <p>© 2025 QuizZonen &nbsp;|&nbsp; Gratis quiz på svenska</p>
   </footer>
 
   <script src="quiz.js"></script>
