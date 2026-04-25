@@ -191,7 +191,7 @@ natur: {
       { q: "Vad är huvudstaden i Sydafrika (säte för regeringen)?", opts: ["Kapstaden","Johannesburg","Pretoria","Durban"], ans: 2 },
       { q: "Vad är huvudstaden i Australien?", opts: ["Sydney","Melbourne","Brisbane","Canberra"], ans: 3 },
       { q: "Vad är huvudstaden i Nya Zeeland?", opts: ["Auckland","Wellington","Christchurch","Dunedin"], ans: 1 },
-      { q: "Vad är huvudstaden i Argentinen?", opts: ["Córdoba","Mendoza","Buenos Aires","Rosario"], ans: 2 },
+      { q: "Vad är huvudstaden i Argentina?", opts: ["Córdoba","Mendoza","Buenos Aires","Rosario"], ans: 2 },
       { q: "Vad är huvudstaden i Nigeria?", opts: ["Lagos","Kano","Ibadan","Abuja"], ans: 3 },
       { q: "Vad är huvudstaden i Pakistan?", opts: ["Karachi","Lahore","Islamabad","Peshawar"], ans: 2 },
       { q: "Vad är huvudstaden i Schweiz?", opts: ["Zürich","Genève","Basel","Bern"], ans: 3 }
