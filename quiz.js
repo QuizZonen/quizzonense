@@ -295,7 +295,7 @@ function showView(name) {
   document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
   document.getElementById('view-' + name).classList.add('active');
   document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-  const idx = ['home','topplista','om'].indexOf(name);
+  const idx = ['home','topplista','om','kontakt'].indexOf(name);
   if (idx >= 0) document.querySelectorAll('.nav-link')[idx].classList.add('active');
   if (name === 'topplista') renderTopplista();
   window.scrollTo(0, 0);
@@ -508,7 +508,7 @@ function clearScores() {
     renderTopplista();
   }
 }
-  function escapeHTML(str) {
+function escapeHTML(str) {
   return str.replace(/[&<>"']/g, m => ({
     '&': '&amp;',
     '<': '&lt;',
@@ -522,7 +522,7 @@ function clearScores() {
 document.querySelectorAll('.nav-link').forEach((link, i) => {
   link.addEventListener('click', e => {
     e.preventDefault();
-    showView(['home','topplista','om'][i]);
+    showView(['home','topplista','om','kontakt'][i]);
   });
 });
 
