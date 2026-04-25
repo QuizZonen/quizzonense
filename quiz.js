@@ -525,3 +525,37 @@ document.querySelectorAll('.nav-link').forEach((link, i) => {
     showView(['home','topplista','om'][i]);
   });
 });
+
+// ===== KONTAKTFORMULÄR =====
+const kontaktForm = document.getElementById('kontakt-form');
+if (kontaktForm) {
+  kontaktForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = kontaktForm.querySelector('button[type="submit"]');
+    btn.textContent = 'Skickar...';
+    btn.disabled = true;
+    try {
+      const res = await fetch(kontaktForm.action, {
+        method: 'POST',
+        body: new FormData(kontaktForm),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok) {
+        kontaktForm.style.display = 'none';
+        document.getElementById('form-success').style.display = 'block';
+      } else {
+        btn.textContent = 'Något gick fel – försök igen';
+        btn.disabled = false;
+      }
+    } catch {
+      btn.textContent = 'Något gick fel – försök igen';
+      btn.disabled = false;
+    }
+  });
+}
+ 
+function resetForm() {
+  document.getElementById('kontakt-form').reset();
+  document.getElementById('kontakt-form').style.display = 'block';
+  document.getElementById('form-success').style.display = 'none';
+}
