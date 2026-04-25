@@ -63,7 +63,7 @@ pop: {
   vetenskap: {
     name: "Vetenskap", emoji: "🔬",
     questions: [
-      { q: "Vad är den kemisk beteckning för vatten?", opts: ["HO","H2O","CO2","O2H"], ans: 1 },
+      { q: "Vad är den kemiska beteckningen för vatten?", opts: ["HO","H2O","CO2","O2H"], ans: 1 },
       { q: "Hur många planeter finns det i vårt solsystem?", opts: ["7","8","9","10"], ans: 1 },
       { q: "Vad kallas kraften som håller oss kvar på jorden?", opts: ["Friktion","Magnetism","Gravitation","Centrifugalkraft"], ans: 2 },
       { q: "Vad är ljusets hastighet (ungefär)?", opts: ["100 000 km/s","200 000 km/s","300 000 km/s","400 000 km/s"], ans: 2 },
@@ -110,7 +110,7 @@ pop: {
     questions: [
       { q: "Vilket år kom Titanic?", opts: ["1995","1996","1997","1998"], ans: 2 },
       { q: "Vem spelar Iron Man i Marvel-filmerna?", opts: ["Chris Evans","Robert Downey Jr.","Chris Hemsworth","Mark Ruffalo"], ans: 1 },
-      { q: "Vilket är den mest sedda Netflix-serien någonsin?", opts: ["Money Heist","The Crown","Squid Game","Stranger Things"], ans: 2 },
+      { q: "Vilken Netflix-serie blev globalt känd för sina dödliga spel?", opts: ["Money Heist","The Crown","Squid Game","Stranger Things"], ans: 2 },
       { q: "Vem regisserade Schindlers lista?", opts: ["Martin Scorsese","Francis Ford Coppola","Steven Spielberg","James Cameron"], ans: 2 },
       { q: "Vilket land producerar flest filmer per år?", opts: ["USA","Kina","Indien","Japan"], ans: 2 },
       { q: "Vad heter den blå robot-katten i den japanska serien?", opts: ["Totoro","Pikachu","Doraemon","Astro Boy"], ans: 2 },
@@ -245,7 +245,7 @@ kungliga: {
       { q: "Vad blir blötare ju mer det torkar?", opts: ["En handduk","En svamp","En fläkt","En tvål"], ans: 0 }
     ]
   }
-}
+}:
 // ===== SCORE CONFIG =====
 const BASE_POINTS     = 100;
 const SPEED_BONUS_MAX = 50;
@@ -265,19 +265,19 @@ let questionStartTime = null;
 let timerInterval     = null;
 
 // ===== SESSION TIME =====
-const sessionStart = Date.now();
+let sessionStart = Date.now();
 
 setInterval(() => {
   const added = Math.floor((Date.now() - sessionStart) / 1000);
   const saved = parseInt(localStorage.getItem('qz_total_time') || '0');
   localStorage.setItem('qz_total_time', saved + added);
-  sessionStart_ref = Date.now();
+  sessionStart = Date.now();
 }, 30000);
 
 window.addEventListener('beforeunload', () => {
   const added = Math.floor((Date.now() - sessionStart) / 1000);
   const saved = parseInt(localStorage.getItem('qz_total_time') || '0');
-  localStorage.setItem('qz_total_time', Math.max(saved, saved + added - 30));
+  localStorage.setItem('qz_total_time', saved + added);
 });
 
 function getTotalTime() {
@@ -334,10 +334,12 @@ function renderQuestion() {
   document.getElementById('streak-label').textContent = currentStreak >= 2 ? '🔥 ' + currentStreak + ' i rad!' : '';
   document.getElementById('question-text').textContent = q.q;
 
-  clearInterval(timerInterval);
+  clearTimeout(timerInterval);
+
   const tf = document.getElementById('timer-fill');
   tf.style.transition = 'none';
   tf.style.width = '100%';
+
   setTimeout(() => {
     tf.style.transition = 'width ' + QUESTION_TIME + 's linear';
     tf.style.width = '0%';
@@ -345,6 +347,7 @@ function renderQuestion() {
 
   const container = document.getElementById('options-container');
   container.innerHTML = '';
+
   q.opts.forEach((opt, i) => {
     const btn = document.createElement('button');
     btn.className = 'opt-btn';
@@ -352,12 +355,16 @@ function renderQuestion() {
     btn.onclick = () => handleAnswer(i, btn);
     container.appendChild(btn);
   });
+
+  timerInterval = setTimeout(() => {
+    if (!answered) handleAnswer(-1, null);
+  }, QUESTION_TIME * 1000);
 }
 
 function handleAnswer(i, btn) {
   if (answered) return;
   answered = true;
-  clearInterval(timerInterval);
+  clearTimeout(timerInterval);
   document.getElementById('timer-fill').style.transition = 'none';
 
   const q = currentQuestions[currentIndex];
@@ -367,22 +374,31 @@ function handleAnswer(i, btn) {
   let pts = 0, bonusMsg = '';
 
   if (i === q.ans) {
-    btn.classList.add('correct');
+    if (btn) btn.classList.add('correct');
+
     currentScore++;
     currentStreak++;
+
     if (currentStreak > bestStreak) bestStreak = currentStreak;
+
     pts += BASE_POINTS;
+
     if (elapsed < 3) {
       const sb = Math.round(SPEED_BONUS_MAX * (1 - elapsed / 3));
-      pts += sb; bonusMsg += ' ⚡+' + sb;
+      pts += sb;
+      bonusMsg += ' ⚡+' + sb;
     }
+
     if (currentStreak >= 2) {
       const str = STREAK_BONUS * (currentStreak - 1);
-      pts += str; bonusMsg += ' 🔥+' + str;
+      pts += str;
+      bonusMsg += ' 🔥+' + str;
     }
+
     showPopup('+' + pts + bonusMsg, true);
   } else {
-    btn.classList.add('wrong');
+    if (btn) btn.classList.add('wrong');
+
     document.querySelectorAll('.opt-btn')[q.ans].classList.add('correct');
     currentStreak = 0;
     showPopup('Fel svar', false);
@@ -477,7 +493,7 @@ function renderTopplista() {
     const rc   = i < 3 ? 'rank-' + (i+1) : '';
     const rank = i < 3 ? medals[i] : (i+1);
     html += `<tr class="${rc}">
-      <td>${rank}</td><td>${s.name}</td><td><strong>${s.points}</strong></td>
+      <td>${rank}</td><td>${escapeHTML(s.name)}</td><td><strong>${s.points}</strong></td>
       <td>${s.score}/${s.total}</td><td>${s.streak > 0 ? '🔥'+s.streak : '-'}</td>
       <td>${formatTime(s.timeOnSite || 0)}</td><td>${s.category}</td><td>${s.date}</td>
     </tr>`;
@@ -491,6 +507,15 @@ function clearScores() {
     localStorage.removeItem('qz_scores');
     renderTopplista();
   }
+}
+  function escapeHTML(str) {
+  return str.replace(/[&<>"']/g, m => ({
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#039;'
+  }[m]));
 }
 
 // ===== NAV =====
