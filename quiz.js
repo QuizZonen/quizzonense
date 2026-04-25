@@ -245,7 +245,7 @@ kungliga: {
       { q: "Vad blir blötare ju mer det torkar?", opts: ["En handduk","En svamp","En fläkt","En tvål"], ans: 0 }
     ]
   }
-}:
+};
 // ===== SCORE CONFIG =====
 const BASE_POINTS     = 100;
 const SPEED_BONUS_MAX = 50;
